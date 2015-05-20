@@ -1,0 +1,40 @@
+<div class="row" data-ng-controller="homeController">
+  <div data-ng-include="EmployeeForm"></div>
+  <div data-ng-include="ModifyEmployeeForm"></div>
+  <div class="col-lg-12" style="margin:0 auto;">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <span>Employee Details</span>
+          <button type="button" class="btn btn-primary pull-right" data-ng-click="addnewEmployee()" data-ng-hide="EmployeeForm">Add Employee</button>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Age
+          </th>
+          <th>
+            Employee ID
+          </th>
+          <th>
+            Remove
+          </th>
+          <th>
+            Modify
+          </th>
+        </tr>
+        <tr data-ng-repeat="employee in employees">
+          <td data-ng-bind="employee.Name"></td>
+          <td data-ng-bind="employee.Age"></td>
+          <td data-ng-bind="employee.EmpId"></td>
+          <td><button type="button" class="btn btn-danger" data-ng-click="deleteRecord(employee._id)">Remove</button></td>
+          <td><button type="button" class="btn btn-primary" data-ng-click="modifyRecord(employee)" data-ng-disabled="ModifyEmployeeForm">Modify</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

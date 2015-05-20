@@ -1,0 +1,9 @@
+angular.module('ExpressApp')
+.service('HomeService'[$http,function($http){
+  return{
+    $http({
+      method:'GET',
+      url:'/EmployeeList'
+    })
+  }
+}]);
